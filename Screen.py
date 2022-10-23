@@ -17,36 +17,28 @@ def draw_grid():
     pass
 
 
-def create_grass(grass_img):
-    for i in range(20):
-        y = random.randint(0, Consts.WINDOW_WIDTH - Consts.GRASS_WIDTH)
-        x = random.randint(0, Consts.WINDOW_HEIGHT - Consts.GRASS_HEIGHT)
-        grass = pygame.image.load(grass_img)
-        sized_grass = pygame.transform.scale(grass, (
-            Consts.GRASS_WIDTH, Consts.GRASS_HEIGHT))
-
-        grass_box = pygame.Surface(
-            (Consts.GRASS_WIDTH, Consts.GRASS_HEIGHT * 2), )
-        grass_box.fill(Consts.BACKGROUND_COLOR)
-        grass_box.blit(sized_grass, (x, y))
-        screen.blit(grass_box, (x, y))
-        return grass_box
-
-
-def draw_grass(grass):
-    pass
-
-
-# grass_rect = grass.get_rect()
-# screen.blit(grass_box, (x, y))
+def create_grass(grass_img, x, y):
+    grass = pygame.image.load(grass_img)
+    sized_grass = pygame.transform.scale(grass, (
+        Consts.GRASS_WIDTH, Consts.GRASS_HEIGHT))
+    screen.blit(sized_grass, (x, y))
 
 
 def create_flag(flag_img):
-    pygame.display.set_caption(flag_img)
-    imp = pygame.image.load("flag.png").convert()
-    sized_flag = pygame.transform.scale(imp, (
-        Consts.FLAG_WIDTH, Consts.FLAG_HEIGHT))
-    screen.blit(sized_flag, (Consts.WINDOW_WIDTH - Consts.FLAG_WIDTH, Consts.WINDOW_HEIGHT - Consts.FLAG_HEIGHT))
+    flag = pygame.image.load(flag_img)
+    sized_flag = pygame.transform.scale(flag,
+                                        (Consts.FLAG_WIDTH, Consts.FLAG_HEIGHT))
+    screen.blit(sized_flag, (Consts.WINDOW_WIDTH - Consts.FLAG_WIDTH,
+                             Consts.WINDOW_HEIGHT - Consts.FLAG_HEIGHT))
+
+
+def place_all_grasses():
+    x = random.randint(0, Consts.WINDOW_HEIGHT - Consts.GRASS_HEIGHT)
+    y = random.randint(0, Consts.WINDOW_WIDTH - Consts.GRASS_WIDTH)
+    print(x)
+    print(y)
+    create_grass(Consts.GRASS_IMG, x, y)
+
 
 
 def draw_lose_message():
@@ -67,6 +59,6 @@ def draw_message(message, font_size, color, location):
 
 def draw_game(game_state):
     screen.fill(Consts.BACKGROUND_COLOR)
-    create_grass(Consts.GRASS_IMG)
+    place_all_grasses()
     create_flag(Consts.FLAG_IMG)
     pygame.display.flip()
