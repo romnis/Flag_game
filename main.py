@@ -20,7 +20,7 @@ def main():
 
         Screen.draw_game(state)
     # Screen.draw_grid()
-        Screen.grass(Consts.GRASS_IMG)
+
 
 
 def handle_user_events():
