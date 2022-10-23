@@ -2,9 +2,9 @@ import pygame
 import Consts
 import random
 
+pygame.display.set_caption('Flag Game')
 screen = pygame.display.set_mode(
     (Consts.WINDOW_WIDTH, Consts.WINDOW_HEIGHT))
-pygame.display.set_caption('Flag Game')
 
 
 # grass = pygame.image.load = pygame.image.load('grass.png').convert_alpha()
@@ -41,7 +41,6 @@ def draw_grass(grass):
 # screen.blit(grass_box, (x, y))
 
 
-
 def create_flag(flag_img):
     flag = pygame.image.load(flag_img)
     sized_grass = pygame.transform.scale(flag, (
@@ -50,7 +49,6 @@ def create_flag(flag_img):
         (Consts.GRASS_WIDTH, Consts.GRASS_HEIGHT * 2), )
     flag_box.fill(Consts.BACKGROUND_COLOR)
     flag_box.blit(sized_grass, (0, 0))
-
 
 
 def draw_lose_message():

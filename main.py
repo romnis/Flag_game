@@ -61,4 +61,5 @@ def handle_user_events():
             pass
 
 
-main()
+if __name__ == '__main__':
+    main()
