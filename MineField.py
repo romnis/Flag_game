@@ -21,6 +21,6 @@ def place_mines():
     for i in range(Consts.NUM_OF_MINES):
         row = random.randint(0, Consts.NUM_OF_ROWS - 1)
         col = random.randint(0, Consts.NUM_OF_COLS - 1)
-        # mine_field[row][col] = Consts.MINE_SQUARE
+        mine_field[row][col] = Consts.MINE_SQUARE
 
 

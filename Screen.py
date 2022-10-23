@@ -43,7 +43,7 @@ def draw_grass(grass):
 
 def create_flag(flag_img):
     pygame.display.set_caption(flag_img)
-    imp = pygame.image.load("C:/Users/masha/PycharmProjects/pythonProject7/flag.png").convert()
+    imp = pygame.image.load("flag.png").convert()
     sized_flag = pygame.transform.scale(imp, (
         Consts.FLAG_WIDTH, Consts.FLAG_HEIGHT))
     screen.blit(sized_flag, (Consts.WINDOW_WIDTH - Consts.FLAG_WIDTH, Consts.WINDOW_HEIGHT - Consts.FLAG_HEIGHT))
