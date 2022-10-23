@@ -47,7 +47,7 @@ def create_flag(flag_img):
     sized_flag = pygame.transform.scale(imp, (
         Consts.FLAG_WIDTH, Consts.FLAG_HEIGHT))
     screen.blit(sized_flag, (Consts.WINDOW_WIDTH - Consts.FLAG_WIDTH, Consts.WINDOW_HEIGHT - Consts.FLAG_HEIGHT))
-    pygame.display.flip()
+
 
 def draw_lose_message():
     draw_message(Consts.LOSE_MESSAGE, Consts.LOSE_FONT_SIZE,
@@ -68,5 +68,5 @@ def draw_message(message, font_size, color, location):
 def draw_game(game_state):
     screen.fill(Consts.BACKGROUND_COLOR)
     create_grass(Consts.GRASS_IMG)
-    pygame.display.flip()
     create_flag(Consts.FLAG_IMG)
+    pygame.display.flip()
