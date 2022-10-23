@@ -2,6 +2,9 @@ import pygame
 import Consts
 import random
 
+x = random.randint(0, Consts.WINDOW_HEIGHT - Consts.GRASS_HEIGHT)
+y = random.randint(0, Consts.WINDOW_WIDTH - Consts.GRASS_WIDTH)
+
 pygame.display.set_caption('Flag Game')
 screen = pygame.display.set_mode(
     (Consts.WINDOW_WIDTH, Consts.WINDOW_HEIGHT))
@@ -17,7 +20,7 @@ def draw_grid():
     pass
 
 
-def create_grass(grass_img, x, y):
+def create_grass(grass_img):
     grass = pygame.image.load(grass_img)
     sized_grass = pygame.transform.scale(grass, (
         Consts.GRASS_WIDTH, Consts.GRASS_HEIGHT))
@@ -32,13 +35,16 @@ def create_flag(flag_img):
                              Consts.WINDOW_HEIGHT - Consts.FLAG_HEIGHT))
 
 
-def place_all_grasses():
+def choose_random():
     x = random.randint(0, Consts.WINDOW_HEIGHT - Consts.GRASS_HEIGHT)
     y = random.randint(0, Consts.WINDOW_WIDTH - Consts.GRASS_WIDTH)
-    print(x)
-    print(y)
-    create_grass(Consts.GRASS_IMG, x, y)
+    return x, y
 
+
+def place_all_grasses():
+    for i in range(20):
+        create_grass(Consts.GRASS_IMG)
+        choose_random()
 
 
 def draw_lose_message():
