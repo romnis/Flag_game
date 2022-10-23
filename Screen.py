@@ -1,18 +1,10 @@
 import pygame
 import Consts
-import Soldier
-import MineField
 import random
-
-# import sklearn
-# from skimage import io
-
-
-pygame.display.set_caption('Title of window')
 
 screen = pygame.display.set_mode(
     (Consts.WINDOW_WIDTH, Consts.WINDOW_HEIGHT))
-pygame.display.set_caption('Title of window')
+pygame.display.set_caption('Flag Game')
 
 
 # grass = pygame.image.load = pygame.image.load('grass.png').convert_alpha()
@@ -23,12 +15,6 @@ def draw_grid():
     #     pygame.draw.line(screen, Consts.BLACK, start_pos=(0, 0, 0),
     #                      end_pos=Consts.WINDOW_WIDTH)
     pass
-
-
-def draw_game(game_state):
-    screen.fill(Consts.BACKGROUND_COLOR)
-    pygame.display.flip()
-    create_grass(Consts.GRASS_IMG)
 
 
 def create_grass(grass_img):
@@ -43,14 +29,17 @@ def create_grass(grass_img):
             (Consts.GRASS_WIDTH, Consts.GRASS_HEIGHT * 2), )
         grass_box.fill(Consts.BACKGROUND_COLOR)
         grass_box.blit(sized_grass, (x, y))
-        # screen.blit(grass_box, (x, y))
+        screen.blit(grass_box, (x, y))
         return grass_box
 
 
 def draw_grass(grass):
-    # grass_rect = grass.get_rect()
-    # screen.blit(grass_box, (x, y))
     pass
+
+
+# grass_rect = grass.get_rect()
+# screen.blit(grass_box, (x, y))
+
 
 
 def create_flag(flag_img):
@@ -80,4 +69,7 @@ def draw_message(message, font_size, color, location):
     screen.blit(text_img, location)
 
 
-
+def draw_game(game_state):
+    screen.fill(Consts.BACKGROUND_COLOR)
+    create_grass(Consts.GRASS_IMG)
+    pygame.display.flip()
