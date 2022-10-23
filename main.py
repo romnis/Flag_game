@@ -17,11 +17,12 @@ def main():
     pygame.init()
     MineField.initialize_mine_field()
     MineField.place_mines()
+    MineField.initialize_flag()
 
     while state["is_window_open"]:
         handle_user_events()
 
-        if Soldier.touched_flag():
+        if Soldier.touched_flag(state["soldier_col"], state["soldier_row"]):
             Screen.draw_win_message()
             time.sleep(3)
             state["is_window_open"] = False
