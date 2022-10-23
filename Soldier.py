@@ -2,8 +2,9 @@ import pygame
 import Consts
 import MineField
 
-soldier = pygame.image.load = pygame.image.load('soldier.png').convert_alpha()
-soldier = pygame.transform.scale(soldier, (60, 120))
+# soldier = pygame.image.load = pygame.image.load('soldier.png').convert_alpha()
+# pygame.display.flip()
+# soldier = pygame.transform.scale(soldier, (60, 120))
 
 
 def initialize_soldier():
