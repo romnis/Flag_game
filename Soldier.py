@@ -37,3 +37,7 @@ def touched_mine(soldier_col, soldier_row):
             MineField.mine_field[soldier_right_leg_row][soldier_right_leg_col] == Consts.MINE_SQUARE:
         return True
     return False
+
+
+def touched_flag():
+    pass

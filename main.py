@@ -1,7 +1,9 @@
 import pygame
 import Consts
+import MineField
 import Screen
 import Soldier
+import time
 
 state = {
     "is_window_open": True,
@@ -13,20 +15,23 @@ state = {
 
 def main():
     pygame.init()
+    MineField.initialize_mine_field()
 
     while state["is_window_open"]:
         handle_user_events()
 
         if Soldier.touched_flag():
             Screen.draw_win_message()
+            time.sleep(3)
+            state["is_window_open"] = False
 
         if Soldier.touched_mine(state["soldier_col"], state["soldier_row"]):
             Screen.draw_lose_message()
+            time.sleep(3)
             state["is_window_open"] = False
 
         Screen.draw_game(state)
     # Screen.draw_grid()
-
 
 
 def handle_user_events():
@@ -52,5 +57,6 @@ def handle_user_events():
 
         elif event.type == pygame.K_KP_ENTER:
             pass
+
 
 main()
