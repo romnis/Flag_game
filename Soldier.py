@@ -1,5 +1,4 @@
 import pygame
-
 import Consts
 import MineField
 
@@ -8,7 +7,7 @@ soldier = pygame.transform.scale(soldier, (60, 120))
 
 
 def initialize_soldier():
-    for i in range(4):
-        MineField.mine_field[i][0] = Consts.SOLDIER_SQUARE
-        MineField.mine_field[i][1] = Consts.SOLDIER_SQUARE
+    for i in range(0, 4):
+        for j in range(0, 2)
+            MineField.mine_field[i][j] = Consts.SOLDIER_SQUARE
 

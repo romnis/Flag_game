@@ -1,2 +1,3 @@
 RUNNING_STATE = 1
 SOLDIER_SQUARE = "soldier"
+FLAG_SQUARE = "flag"
