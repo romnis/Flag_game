@@ -46,12 +46,22 @@ def create_grass(grass_img):
         # screen.blit(grass_box, (x, y))
         return grass_box
 
+
 def draw_grass(grass):
     # grass_rect = grass.get_rect()
     # screen.blit(grass_box, (x, y))
+    pass
+
 
 def create_flag(flag_img):
-    pass
+    flag = pygame.image.load(flag_img)
+    sized_grass = pygame.transform.scale(flag, (
+        Consts.FLAG_WIDTH, Consts.FLAG_HEIGHT))
+    flag_box = pygame.Surface(
+        (Consts.GRASS_WIDTH, Consts.GRASS_HEIGHT * 2), )
+    flag_box.fill(Consts.BACKGROUND_COLOR)
+    flag_box.blit(sized_grass, (0, 0))
+
 
 
 def draw_lose_message():
@@ -68,3 +78,6 @@ def draw_message(message, font_size, color, location):
     font = pygame.font.SysFont(Consts.FONT_NAME, font_size)
     text_img = font.render(message, True, color)
     screen.blit(text_img, location)
+
+
+
