@@ -17,6 +17,8 @@ def main():
         handle_user_events()
 
     Screen.draw_game(state)
+    Screen.draw_grid()
+    Screen.grass()
 
 
 def handle_user_events():
@@ -39,3 +41,21 @@ def handle_user_events():
 
         elif event.type == pygame.K_DOWN:
             pass
+import pygame
+import Consts
+import Screen
+import Soldier
+
+
+state = {
+    "is_window_open": True,
+    "state": Consts.RUNNING_STATE,
+
+}
+
+
+
+
+
+
+main()
