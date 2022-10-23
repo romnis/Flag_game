@@ -42,14 +42,12 @@ def draw_grass(grass):
 
 
 def create_flag(flag_img):
-    flag = pygame.image.load(flag_img)
-    sized_grass = pygame.transform.scale(flag, (
+    pygame.display.set_caption(flag_img)
+    imp = pygame.image.load("C:/Users/masha/PycharmProjects/pythonProject7/flag.png").convert()
+    sized_flag = pygame.transform.scale(imp, (
         Consts.FLAG_WIDTH, Consts.FLAG_HEIGHT))
-    flag_box = pygame.Surface(
-        (Consts.GRASS_WIDTH, Consts.GRASS_HEIGHT * 2), )
-    flag_box.fill(Consts.BACKGROUND_COLOR)
-    flag_box.blit(sized_grass, (0, 0))
-
+    screen.blit(sized_flag, (Consts.WINDOW_WIDTH - Consts.FLAG_WIDTH, Consts.WINDOW_HEIGHT - Consts.FLAG_HEIGHT))
+    pygame.display.flip()
 
 def draw_lose_message():
     draw_message(Consts.LOSE_MESSAGE, Consts.LOSE_FONT_SIZE,
@@ -71,3 +69,4 @@ def draw_game(game_state):
     screen.fill(Consts.BACKGROUND_COLOR)
     create_grass(Consts.GRASS_IMG)
     pygame.display.flip()
+    create_flag(Consts.FLAG_IMG)
