@@ -16,6 +16,7 @@ state = {
 def main():
     pygame.init()
     MineField.initialize_mine_field()
+    MineField.place_mines()
 
     while state["is_window_open"]:
         handle_user_events()
