@@ -1,12 +1,14 @@
 import pygame
 import Consts
+import MineField
 import Screen
+import Soldier
 
 state = {
     "is_window_open": True,
     "state": Consts.RUNNING_STATE,
-
-
+    "soldier_col": 0,
+    "soldier_row": 0
 }
 
 
@@ -31,31 +33,13 @@ def handle_user_events():
             continue
 
         elif event.type == pygame.K_RIGHT:
-            pass
+            Soldier.move_right(state)
 
         elif event.type == pygame.K_LEFT:
-            pass
+            Soldier.move_left(state)
 
         elif event.type == pygame.K_UP:
-            pass
+            Soldier.move_up(state)
 
         elif event.type == pygame.K_DOWN:
-            pass
-import pygame
-import Consts
-import Screen
-import Soldier
-
-
-state = {
-    "is_window_open": True,
-    "state": Consts.RUNNING_STATE,
-
-}
-
-
-
-
-
-
-main()
+            Soldier.move_down(state)
