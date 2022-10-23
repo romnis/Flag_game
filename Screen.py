@@ -43,11 +43,15 @@ def create_grass(grass_img):
             (Consts.GRASS_WIDTH, Consts.GRASS_HEIGHT * 2), )
         grass_box.fill(Consts.BACKGROUND_COLOR)
         grass_box.blit(sized_grass, (x, y))
-        screen.blit(grass_box, (x, y))
-
+        # screen.blit(grass_box, (x, y))
+        return grass_box
 
 def draw_grass(grass):
-    grass_rect = grass.get_rect()
+    # grass_rect = grass.get_rect()
+    # screen.blit(grass_box, (x, y))
+
+def create_flag(flag_img):
+    pass
 
 
 def draw_lose_message():

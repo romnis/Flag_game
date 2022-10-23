@@ -23,6 +23,10 @@ GRASS_IMG = "grass.png"
 GRASS_HEIGHT = 30
 GRASS_WIDTH = 30
 
+FLAG_IMG = "flag.png"
+FLAG_HIGHT = 50
+FLAG_WIDTH = 30
+
 FONT_NAME = "Calibri"
 LOSE_MESSAGE = "You Lost!"
 LOSE_FONT_SIZE = int(0.15 * WINDOW_WIDTH)
