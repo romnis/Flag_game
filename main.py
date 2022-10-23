@@ -28,7 +28,6 @@ def main():
     # Screen.draw_grid()
 
 
-
 def handle_user_events():
     for event in pygame.event.get():
 
@@ -52,5 +51,6 @@ def handle_user_events():
 
         elif event.type == pygame.K_KP_ENTER:
             pass
+
 
 main()

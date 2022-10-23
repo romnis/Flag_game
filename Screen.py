@@ -33,8 +33,8 @@ def draw_game(game_state):
 
 def create_grass(grass_img):
     for i in range(20):
-        y = random.randint(0, Consts.NUM_OF_COLS - 3)
-        x = random.randint(0, Consts.NUM_OF_ROWS)
+        y = random.randint(0, Consts.WINDOW_WIDTH - Consts.GRASS_WIDTH)
+        x = random.randint(0, Consts.WINDOW_HEIGHT - Consts.GRASS_HEIGHT)
         grass = pygame.image.load(grass_img)
         sized_grass = pygame.transform.scale(grass, (
             Consts.GRASS_WIDTH, Consts.GRASS_HEIGHT))
@@ -43,7 +43,7 @@ def create_grass(grass_img):
             (Consts.GRASS_WIDTH, Consts.GRASS_HEIGHT * 2), )
         grass_box.fill(Consts.BACKGROUND_COLOR)
         grass_box.blit(sized_grass, (x, y))
-        screen.blit(grass_box)
+        screen.blit(grass_box, (x, y))
 
 
 def draw_grass(grass):
