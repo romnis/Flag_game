@@ -1,1 +1,2 @@
 RUNNING_STATE = 1
+SOLDIER_SQUARE = "soldier"
